@@ -5,7 +5,7 @@ export async function cleanDatabase(context: Context) {
   const tableNames = Object.keys(context.db);
   for (let index = 0; index < tableNames.length; index++) {
     const tableName = tableNames[index];
-    const result = await context.prisma[tableName].deleteMany({});
+    await context.prisma[tableName].deleteMany({});
   }
 
   console.log("The database has been cleaned");
