@@ -16,13 +16,17 @@ model User {
   id       String @id @default(cuid())
   name     String @default("")
   email    String @unique @default("")
+  status   String @default("")
   password String
 }
 
 model Person {
   id           String      @id @default(cuid())
-  firstName    String      @default("")
-  lastName     String      @default("")
+  familyName   String      @default("")
+  givenName    String      @default("")
+  email        String      @default("")
+  status       String      @default("")
+  telephone    String      @default("")
   soldActions  UseAction[] @relation("Person_soldActions")
   pilotActions UseAction[] @relation("Person_pilotActions")
 }
@@ -43,6 +47,7 @@ model ProductModel {
 model Product {
   id             String        @id @default(cuid())
   name           String        @default("")
+  status         String        @default("")
   productModel   ProductModel? @relation("Product_productModel", fields: [productModelId], references: [id])
   productModelId String?       @map("productModel")
   articles       Article[]     @relation("Article_product")
@@ -62,6 +67,7 @@ model Article {
 
 model UseAction {
   id          String        @id @default(cuid())
+  name        String        @default("")
   status      String        @default("")
   description String        @default("")
   takeOffTime DateTime?
@@ -80,8 +86,8 @@ model UseAction {
 
 model Report {
   id          String     @id @default(cuid())
-  status      String     @default("")
   title       String     @default("")
+  status      String     @default("")
   criticity   String     @default("")
   description String     @default("")
   useAction   UseAction? @relation("Report_useAction", fields: [useActionId], references: [id])

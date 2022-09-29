@@ -5,6 +5,7 @@ type User {
   id: ID!
   name: String
   email: String
+  status: String
   password: PasswordState
 }
 
@@ -24,6 +25,7 @@ input UserWhereInput {
   id: IDFilter
   name: StringFilter
   email: StringFilter
+  status: StringFilter
 }
 
 input IDFilter {
@@ -69,6 +71,7 @@ input UserOrderByInput {
   id: OrderDirection
   name: OrderDirection
   email: OrderDirection
+  status: OrderDirection
 }
 
 enum OrderDirection {
@@ -79,6 +82,7 @@ enum OrderDirection {
 input UserUpdateInput {
   name: String
   email: String
+  status: String
   password: String
 }
 
@@ -90,13 +94,17 @@ input UserUpdateArgs {
 input UserCreateInput {
   name: String
   email: String
+  status: String
   password: String
 }
 
 type Person {
   id: ID!
-  firstName: String
-  lastName: String
+  familyName: String
+  givenName: String
+  email: String
+  status: String
+  telephone: String
   soldActions(
     where: UseActionWhereInput! = {}
     orderBy: [UseActionOrderByInput!]! = []
@@ -122,8 +130,11 @@ input PersonWhereInput {
   OR: [PersonWhereInput!]
   NOT: [PersonWhereInput!]
   id: IDFilter
-  firstName: StringFilter
-  lastName: StringFilter
+  familyName: StringFilter
+  givenName: StringFilter
+  email: StringFilter
+  status: StringFilter
+  telephone: StringFilter
   soldActions: UseActionManyRelationFilter
   pilotActions: UseActionManyRelationFilter
 }
@@ -136,13 +147,19 @@ input UseActionManyRelationFilter {
 
 input PersonOrderByInput {
   id: OrderDirection
-  firstName: OrderDirection
-  lastName: OrderDirection
+  familyName: OrderDirection
+  givenName: OrderDirection
+  email: OrderDirection
+  status: OrderDirection
+  telephone: OrderDirection
 }
 
 input PersonUpdateInput {
-  firstName: String
-  lastName: String
+  familyName: String
+  givenName: String
+  email: String
+  status: String
+  telephone: String
   soldActions: UseActionRelateToManyForUpdateInput
   pilotActions: UseActionRelateToManyForUpdateInput
 }
@@ -160,8 +177,11 @@ input PersonUpdateArgs {
 }
 
 input PersonCreateInput {
-  firstName: String
-  lastName: String
+  familyName: String
+  givenName: String
+  email: String
+  status: String
+  telephone: String
   soldActions: UseActionRelateToManyForCreateInput
   pilotActions: UseActionRelateToManyForCreateInput
 }
@@ -287,6 +307,7 @@ input ProductRelateToManyForCreateInput {
 type Product {
   id: ID!
   name: String
+  status: String
   productModel: ProductModel
   articles(
     where: ArticleWhereInput! = {}
@@ -307,6 +328,7 @@ input ProductWhereInput {
   NOT: [ProductWhereInput!]
   id: IDFilter
   name: StringFilter
+  status: StringFilter
   productModel: ProductModelWhereInput
   articles: ArticleManyRelationFilter
 }
@@ -320,10 +342,12 @@ input ArticleManyRelationFilter {
 input ProductOrderByInput {
   id: OrderDirection
   name: OrderDirection
+  status: OrderDirection
 }
 
 input ProductUpdateInput {
   name: String
+  status: String
   productModel: ProductModelRelateToOneForUpdateInput
   articles: ArticleRelateToManyForUpdateInput
 }
@@ -348,6 +372,7 @@ input ProductUpdateArgs {
 
 input ProductCreateInput {
   name: String
+  status: String
   productModel: ProductModelRelateToOneForCreateInput
   articles: ArticleRelateToManyForCreateInput
 }
@@ -424,6 +449,7 @@ input ProductRelateToOneForCreateInput {
 
 type UseAction {
   id: ID!
+  name: String
   status: String
   description: String
   takeOffTime: DateTime
@@ -459,6 +485,7 @@ input UseActionWhereInput {
   OR: [UseActionWhereInput!]
   NOT: [UseActionWhereInput!]
   id: IDFilter
+  name: StringFilter
   status: StringFilter
   description: StringFilter
   takeOffTime: DateTimeNullableFilter
@@ -500,6 +527,7 @@ input PersonManyRelationFilter {
 
 input UseActionOrderByInput {
   id: OrderDirection
+  name: OrderDirection
   status: OrderDirection
   description: OrderDirection
   takeOffTime: OrderDirection
@@ -507,6 +535,7 @@ input UseActionOrderByInput {
 }
 
 input UseActionUpdateInput {
+  name: String
   status: String
   description: String
   takeOffTime: DateTime
@@ -549,6 +578,7 @@ input UseActionUpdateArgs {
 }
 
 input UseActionCreateInput {
+  name: String
   status: String
   description: String
   takeOffTime: DateTime
@@ -582,8 +612,8 @@ input OrganizationRelateToOneForCreateInput {
 
 type Report {
   id: ID!
-  status: String
   title: String
+  status: String
   criticity: String
   description: String
   useAction: UseAction
@@ -598,8 +628,8 @@ input ReportWhereInput {
   OR: [ReportWhereInput!]
   NOT: [ReportWhereInput!]
   id: IDFilter
-  status: StringFilter
   title: StringFilter
+  status: StringFilter
   criticity: StringFilter
   description: StringFilter
   useAction: UseActionWhereInput
@@ -607,15 +637,15 @@ input ReportWhereInput {
 
 input ReportOrderByInput {
   id: OrderDirection
-  status: OrderDirection
   title: OrderDirection
+  status: OrderDirection
   criticity: OrderDirection
   description: OrderDirection
 }
 
 input ReportUpdateInput {
-  status: String
   title: String
+  status: String
   criticity: String
   description: String
   useAction: UseActionRelateToOneForUpdateInput
@@ -633,8 +663,8 @@ input ReportUpdateArgs {
 }
 
 input ReportCreateInput {
-  status: String
   title: String
+  status: String
   criticity: String
   description: String
   useAction: UseActionRelateToOneForCreateInput

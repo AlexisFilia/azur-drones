@@ -3,24 +3,24 @@ import { Context } from "@keystone-6/core/dist/declarations/src/types/schema/gra
 function persons() {
   return [
     {
-      firstName: "Adrien",
-      lastName: "Euverte",
+      givenName: "Adrien",
+      familyName: "Euverte",
     },
     {
-      firstName: "Alexis",
-      lastName: "Filia",
+      givenName: "Alexis",
+      familyName: "Filia",
     },
     {
-      firstName: "Nicolas",
-      lastName: "Billecocq",
+      givenName: "Nicolas",
+      familyName: "Billecocq",
     },
     {
-      firstName: "Paul",
-      lastName: "Mystère",
+      givenName: "Paul",
+      familyName: "Mystère",
     },
     {
-      firstName: "John",
-      lastName: "Do",
+      givenName: "John",
+      familyName: "Do",
     },
   ];
 }
@@ -67,6 +67,7 @@ function allOtherData({
                   useActions: {
                     create: [
                       {
+                        name: "Flight 209112",
                         status: "Done",
                         description: "Reconnaissance flight",
                         takeOffTime: new Date(
@@ -92,6 +93,7 @@ function allOtherData({
                         },
                       },
                       {
+                        name: "Flight 309782",
                         status: "Done",
                         description: "Fire intervention",
                         takeOffTime: new Date(
@@ -117,6 +119,7 @@ function allOtherData({
                         },
                       },
                       {
+                        name: "Flight 189916",
                         status: "Canceled",
                         description: "Wood prospection",
                         takeOffTime: new Date(
@@ -131,6 +134,7 @@ function allOtherData({
                         },
                       },
                       {
+                        name: "Flight 315289",
                         status: "Done",
                         description: "Mine prospection",
                         takeOffTime: new Date(
@@ -163,6 +167,7 @@ function allOtherData({
                   useActions: {
                     create: [
                       {
+                        name: "Flight 988901",
                         status: "Done",
                         description: "Test flight",
                         takeOffTime: new Date(
@@ -188,6 +193,7 @@ function allOtherData({
                         },
                       },
                       {
+                        name: "Flight 900712",
                         status: "Done",
                         description: "Take pictures",
                         takeOffTime: new Date(
@@ -213,6 +219,7 @@ function allOtherData({
                         },
                       },
                       {
+                        name: "Flight 568991",
                         status: "Done",
                         description: "Mine prospection",
                         takeOffTime: new Date(
@@ -245,6 +252,7 @@ function allOtherData({
                   useActions: {
                     create: [
                       {
+                        name: "Flight 233760",
                         status: "Done",
                         description: "Send ressources to toopers",
                         takeOffTime: new Date(
@@ -270,6 +278,7 @@ function allOtherData({
                         },
                       },
                       {
+                        name: "Flight 654390",
                         status: "Done",
                         description: "Aerian pictures",
                         takeOffTime: new Date(
@@ -295,6 +304,7 @@ function allOtherData({
                         },
                       },
                       {
+                        name: "Flight 987654",
                         status: "Done",
                         description: "Flight test",
                         takeOffTime: new Date(
@@ -307,6 +317,9 @@ function allOtherData({
                         pilots: {
                           connect: [personIds[3]],
                         },
+                        client: {
+                          connect: organizationIds[0],
+                        },
                         report: {
                           create: {
                             status: "published",
@@ -317,6 +330,7 @@ function allOtherData({
                         },
                       },
                       {
+                        name: "Flight 236822",
                         status: "Done",
                         description: "Flight test",
                         takeOffTime: new Date(
@@ -339,6 +353,7 @@ function allOtherData({
                         },
                       },
                       {
+                        name: "Flight 985479",
                         status: "Done",
                         description: "Flight test",
                         takeOffTime: new Date(
@@ -375,6 +390,7 @@ function allOtherData({
                   useActions: {
                     create: [
                       {
+                        name: "Flight 123432",
                         status: "Done",
                         description: "Reconnaissance flight",
                         takeOffTime: new Date(
@@ -400,6 +416,7 @@ function allOtherData({
                         },
                       },
                       {
+                        name: "Flight 223344",
                         status: "Done",
                         description: "Fire intervention",
                         takeOffTime: new Date(
@@ -425,6 +442,7 @@ function allOtherData({
                         },
                       },
                       {
+                        name: "Flight 989865",
                         status: "Canceled",
                         description: "Wood prospection",
                         takeOffTime: new Date(
@@ -439,6 +457,7 @@ function allOtherData({
                         },
                       },
                       {
+                        name: "Flight 457590",
                         status: "Done",
                         description: "Mine prospection",
                         takeOffTime: new Date(
@@ -464,6 +483,7 @@ function allOtherData({
                         },
                       },
                       {
+                        name: "Flight 987689",
                         status: "Done",
                         description: "Aerian pictures",
                         takeOffTime: new Date(
@@ -489,6 +509,7 @@ function allOtherData({
                         },
                       },
                       {
+                        name: "Flight 392827",
                         status: "Done",
                         description: "Flight test",
                         takeOffTime: new Date(
@@ -501,6 +522,9 @@ function allOtherData({
                         pilots: {
                           connect: [personIds[3]],
                         },
+                        client: {
+                          connect: organizationIds[0],
+                        },
                         report: {
                           create: {
                             status: "published",
@@ -511,6 +535,7 @@ function allOtherData({
                         },
                       },
                       {
+                        name: "Flight 455677",
                         status: "Done",
                         description: "Flight test",
                         takeOffTime: new Date(
@@ -523,6 +548,9 @@ function allOtherData({
                         pilots: {
                           connect: [personIds[3]],
                         },
+                        client: {
+                          connect: organizationIds[1],
+                        },
                         report: {
                           create: {
                             status: "published",
@@ -533,6 +561,7 @@ function allOtherData({
                         },
                       },
                       {
+                        name: "Flight 345698",
                         status: "Done",
                         description: "Flight test",
                         takeOffTime: new Date(
@@ -544,6 +573,9 @@ function allOtherData({
                         },
                         pilots: {
                           connect: [personIds[3]],
+                        },
+                        client: {
+                          connect: organizationIds[2],
                         },
                         report: {
                           create: {
@@ -562,6 +594,7 @@ function allOtherData({
                   useActions: {
                     create: [
                       {
+                        name: "Flight 111111",
                         status: "Done",
                         description: "Test flight",
                         takeOffTime: new Date(
@@ -587,6 +620,7 @@ function allOtherData({
                         },
                       },
                       {
+                        name: "Flight 888777",
                         status: "Done",
                         description: "Take pictures",
                         takeOffTime: new Date(
@@ -612,6 +646,7 @@ function allOtherData({
                         },
                       },
                       {
+                        name: "Flight 395350",
                         status: "Done",
                         description: "Mine prospection",
                         takeOffTime: new Date(
@@ -644,6 +679,7 @@ function allOtherData({
                   useActions: {
                     create: [
                       {
+                        name: "Flight 233444",
                         status: "Done",
                         description: "Send ressources to toopers",
                         takeOffTime: new Date(
@@ -690,6 +726,7 @@ function allOtherData({
                   useActions: {
                     create: [
                       {
+                        name: "Dive 00001",
                         status: "Done",
                         description: "Reconnaissance dive",
                         takeOffTime: new Date(
@@ -715,6 +752,7 @@ function allOtherData({
                         },
                       },
                       {
+                        name: "Dive 00002",
                         status: "Done",
                         description: "Under water intervention",
                         takeOffTime: new Date(
@@ -740,6 +778,7 @@ function allOtherData({
                         },
                       },
                       {
+                        name: "Dive 00003",
                         status: "Canceled",
                         description: "Coral prospection",
                         takeOffTime: new Date(
@@ -754,6 +793,7 @@ function allOtherData({
                         },
                       },
                       {
+                        name: "Dive 00004",
                         status: "Done",
                         description: "Fishing",
                         takeOffTime: new Date(
@@ -779,6 +819,7 @@ function allOtherData({
                         },
                       },
                       {
+                        name: "Dive 00098",
                         status: "Planned",
                         description: "Test",
                         takeOffTime: new Date(
@@ -810,6 +851,7 @@ function allOtherData({
                   useActions: {
                     create: [
                       {
+                        name: "Dive 00005",
                         status: "Done",
                         description: "Test dive",
                         takeOffTime: new Date(
@@ -835,6 +877,7 @@ function allOtherData({
                         },
                       },
                       {
+                        name: "Dive 00006",
                         status: "Done",
                         description: "Take pictures",
                         takeOffTime: new Date(
@@ -860,6 +903,7 @@ function allOtherData({
                         },
                       },
                       {
+                        name: "Dive 00007",
                         status: "Done",
                         description: "Mine prospection",
                         takeOffTime: new Date(
@@ -892,6 +936,7 @@ function allOtherData({
                   useActions: {
                     create: [
                       {
+                        name: "Dive 00008",
                         status: "Done",
                         description: "Send ressources to toopers",
                         takeOffTime: new Date(
@@ -917,6 +962,7 @@ function allOtherData({
                         },
                       },
                       {
+                        name: "Dive 00009",
                         status: "Done",
                         description: "Aerian pictures",
                         takeOffTime: new Date(
@@ -942,6 +988,7 @@ function allOtherData({
                         },
                       },
                       {
+                        name: "Dive 00010",
                         status: "Done",
                         description: "Flight test",
                         takeOffTime: new Date(
@@ -964,6 +1011,7 @@ function allOtherData({
                         },
                       },
                       {
+                        name: "Dive 00011",
                         status: "Done",
                         description: "Flight test",
                         takeOffTime: new Date(
@@ -986,6 +1034,7 @@ function allOtherData({
                         },
                       },
                       {
+                        name: "Dive 00012",
                         status: "Done",
                         description: "Flight test",
                         takeOffTime: new Date(
@@ -1022,6 +1071,7 @@ function allOtherData({
                   useActions: {
                     create: [
                       {
+                        name: "Dive 00013",
                         status: "Done",
                         description: "Reconnaissance flight",
                         takeOffTime: new Date(
@@ -1047,6 +1097,7 @@ function allOtherData({
                         },
                       },
                       {
+                        name: "Dive 00014",
                         status: "Done",
                         description: "Fire intervention",
                         takeOffTime: new Date(
@@ -1072,6 +1123,7 @@ function allOtherData({
                         },
                       },
                       {
+                        name: "Dive 00015",
                         status: "Canceled",
                         description: "Wood prospection",
                         takeOffTime: new Date(
@@ -1086,6 +1138,7 @@ function allOtherData({
                         },
                       },
                       {
+                        name: "Dive 00016",
                         status: "Done",
                         description: "Mine prospection",
                         takeOffTime: new Date(
@@ -1111,6 +1164,7 @@ function allOtherData({
                         },
                       },
                       {
+                        name: "Dive 00017",
                         status: "Done",
                         description: "Aerian pictures",
                         takeOffTime: new Date(
@@ -1136,6 +1190,7 @@ function allOtherData({
                         },
                       },
                       {
+                        name: "Dive 00018",
                         status: "Done",
                         description: "Flight test",
                         takeOffTime: new Date(
@@ -1148,6 +1203,9 @@ function allOtherData({
                         pilots: {
                           connect: [personIds[3]],
                         },
+                        client: {
+                          connect: organizationIds[0],
+                        },
                         report: {
                           create: {
                             status: "published",
@@ -1158,6 +1216,7 @@ function allOtherData({
                         },
                       },
                       {
+                        name: "Dive 00019",
                         status: "Done",
                         description: "Flight test",
                         takeOffTime: new Date(
@@ -1170,6 +1229,9 @@ function allOtherData({
                         pilots: {
                           connect: [personIds[3]],
                         },
+                        client: {
+                          connect: organizationIds[3],
+                        },
                         report: {
                           create: {
                             status: "published",
@@ -1180,6 +1242,7 @@ function allOtherData({
                         },
                       },
                       {
+                        name: "Dive 00020",
                         status: "Done",
                         description: "Flight test",
                         takeOffTime: new Date(
@@ -1191,6 +1254,9 @@ function allOtherData({
                         },
                         pilots: {
                           connect: [personIds[3]],
+                        },
+                        client: {
+                          connect: organizationIds[1],
                         },
                         report: {
                           create: {
@@ -1209,6 +1275,7 @@ function allOtherData({
                   useActions: {
                     create: [
                       {
+                        name: "Dive 00021",
                         status: "Done",
                         description: "Test flight",
                         takeOffTime: new Date(
@@ -1234,6 +1301,7 @@ function allOtherData({
                         },
                       },
                       {
+                        name: "Dive 00022",
                         status: "Done",
                         description: "Take pictures",
                         takeOffTime: new Date(
@@ -1259,6 +1327,7 @@ function allOtherData({
                         },
                       },
                       {
+                        name: "Dive 00023",
                         status: "Done",
                         description: "Mine prospection",
                         takeOffTime: new Date(
@@ -1291,6 +1360,7 @@ function allOtherData({
                   useActions: {
                     create: [
                       {
+                        name: "Dive 00024",
                         status: "Done",
                         description: "Send ressources to toopers",
                         takeOffTime: new Date(
